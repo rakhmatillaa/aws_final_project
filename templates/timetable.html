@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable</title>
+</head>
+<body>
+    <h1>Timetable for {{ level }}</h1>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Level</th>
+                <th>Day</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row[1] }}</td>  <!-- Course Name -->
+                    <td>{{ row[2] }}</td>  <!-- Level (Undergraduate/Graduate) -->
+                    <td>{{ row[3] }}</td>  <!-- Day -->
+                    <td>{{ row[4] }}</td>  <!-- Time -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
